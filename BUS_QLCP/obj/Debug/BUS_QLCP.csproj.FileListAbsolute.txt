@@ -1,0 +1,11 @@
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\BUS_QLCP.dll
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\BUS_QLCP.pdb
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\obj\Debug\BUS_QLCP.csprojAssemblyReference.cache
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\obj\Debug\BUS_QLCP.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\obj\Debug\BUS_QLCP.dll
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\obj\Debug\BUS_QLCP.pdb
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\DAL_QLCP.dll
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\DTO_QLCP.dll
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\DAL_QLCP.pdb
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\bin\Debug\DTO_QLCP.pdb
+C:\Users\Dell\Desktop\BTL_WCf\BUS_QLCP\obj\Debug\BUS_QLCP.csproj.CopyComplete
