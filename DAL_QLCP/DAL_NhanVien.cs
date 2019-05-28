@@ -18,15 +18,17 @@ namespace DAL_QLCP
             return db.getDS(query);
         }
 
-        public DataTable getDSNV(string maNV)
+        public DataTable getDSNV_theoma(string maNV)
         {
             string query = "Select *from tblNhanVien where MaNV='" + maNV + "'";
             return db.getDS(query);
         }
+
         public bool kiemTraNhanVien(string maNV)
         {
             return db.kiemTraTonTai2(maNV);
         }
+
         public bool ThemNV(NhanVien nv)
         {
             string[] param = { "@MaNV", "@TenNV", "@NgaySinh", "@GioiTinh", "@TrinhDo", "@ChucVu", "@SoCM", "@DiaChi" };

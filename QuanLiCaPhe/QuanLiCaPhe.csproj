@@ -83,6 +83,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\NguyenLieuService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\NhanVienService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -233,12 +238,6 @@
     <Compile Include="frmSoDoChinh.Designer.cs">
       <DependentUpon>frmSoDoChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThemDVT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemDVT.Designer.cs">
-      <DependentUpon>frmThemDVT.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaoCao.resx">
@@ -321,10 +320,6 @@
       <DependentUpon>frmSoDoChinh.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemDVT.resx">
-      <DependentUpon>frmThemDVT.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -356,6 +351,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="Connected Services\NguyenLieuService\NguyenLieuServices.wsdl" />
     <None Include="Connected Services\NhanVienService\NhanVienService.wsdl" />
     <None Include="DSBangLuong.xsc">
       <DependentUpon>DSBangLuong.xsd</DependentUpon>
@@ -483,6 +479,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NguyenLieuService\" />
     <WCFMetadataStorage Include="Connected Services\NhanVienService\" />
   </ItemGroup>
   <ItemGroup>
@@ -493,6 +490,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\NhanVienService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

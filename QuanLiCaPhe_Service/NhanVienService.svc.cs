@@ -29,13 +29,12 @@ namespace QuanLiCaPhe_Service
 
         public DataTable getDSNV_theoma(string maNV)
         {
-            string query = "Select *from tblNhanVien where MaNV='" + maNV + "'";
-            return db.getDS(query);
+            return dalnv.getDSNV_theoma(maNV);
         }
 
         public bool kiemTraNhanVien(string maNV)
         {
-            return db.kiemTraTonTai2(maNV);
+            return dalnv.kiemTraNhanVien(maNV);
         }
 
         public bool SuaNV(NhanVien nv)

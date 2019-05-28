@@ -6,25 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BUS_QLCP;
 using DTO_QLCP;
+using QuanLiCaPhe.NguyenLieuService;
 
 namespace QuanLiCaPhe
 {
     public partial class frmQuanLiNL : Form
     {
-        NguyenLieuBO nlBO = new NguyenLieuBO();
-        public frmQuanLiNL(string text)
+        NguyenLieuServicesClient nlsv = new NguyenLieuServicesClient();
+
+        public frmQuanLiNL()
         {
             InitializeComponent();
-            cbDVT.Items.Add(text);
-            cbDVT.Text = text;
         }
-
         private void frmQuanLiNL_Load(object sender, EventArgs e)
         {
             DataTable tableNV = new DataTable();
-            tableNV = nlBO.getDSNL();
+            tableNV = nlsv.getDSNL();
             dgNguyenLieu.DataSource = tableNV;
         }
 
@@ -64,7 +62,7 @@ namespace QuanLiCaPhe
         private void bindData()
         {
             BindingSource binSourceNL = new BindingSource();
-            binSourceNL.DataSource = nlBO.getDSNL();
+            binSourceNL.DataSource = nlsv.getDSNL();
             clearBind();
             txtMaNL.DataBindings.Add("Text", binSourceNL, "MaNL");
             txtTenNL.DataBindings.Add("Text", binSourceNL, "TenNL");
@@ -84,7 +82,7 @@ namespace QuanLiCaPhe
             NguyenLieu  nl = getDataNL();
             if (MessageBox.Show("Bạn có chắc muốn xóa nguyên liệu này?", "Xác Nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (nlBO.XoaNL(nl))
+                if (nlsv.XoaNL(nl))
                     MessageBox.Show("Xóa thành công");
                 else
                     MessageBox.Show("Không thể xóa");
@@ -101,9 +99,9 @@ namespace QuanLiCaPhe
             {
                 if (btnSua.Enabled == false)
                 {
-                    if (nlBO.kiemTraNL(txtMaNL.Text) == false)
+                    if (nlsv.kiemTraNL(txtMaNL.Text) == false)
                     {
-                        if (nlBO.ThemNL(nl))
+                        if (nlsv.ThemNL(nl))
                             MessageBox.Show("Thêm thành công");
                         else
                             MessageBox.Show("Lỗi nhập dữ liệu");
@@ -113,7 +111,7 @@ namespace QuanLiCaPhe
                 }
                 else
                 {
-                    if (nlBO.SuaNL(nl))
+                    if (nlsv.SuaNL(nl))
                         MessageBox.Show("Sửa thành công");
                     else
                         MessageBox.Show("Không thể sửa thông tin");
@@ -138,13 +136,6 @@ namespace QuanLiCaPhe
             txtDonGia.Text = "";
             txtSoLuongCon.Text = "";
             btnSua.Enabled = false;
-        }
-
-        private void btnThemDVT_Click(object sender, EventArgs e)
-        {
-            frmThemDVT FromThemDVT=new frmThemDVT();
-            FromThemDVT.Show();
-            this.Close();
         }
 
     }

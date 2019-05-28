@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLiNL));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThemDVT = new System.Windows.Forms.Button();
             this.cbDVT = new System.Windows.Forms.ComboBox();
             this.txtSoLuongCon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,7 +70,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnThemDVT);
             this.groupBox1.Controls.Add(this.cbDVT);
             this.groupBox1.Controls.Add(this.txtSoLuongCon);
             this.groupBox1.Controls.Add(this.label5);
@@ -87,18 +85,6 @@
             this.groupBox1.Size = new System.Drawing.Size(871, 191);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            // 
-            // btnThemDVT
-            // 
-            this.btnThemDVT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemDVT.Location = new System.Drawing.Point(808, 24);
-            this.btnThemDVT.Name = "btnThemDVT";
-            this.btnThemDVT.Size = new System.Drawing.Size(44, 24);
-            this.btnThemDVT.TabIndex = 11;
-            this.btnThemDVT.Text = "...";
-            this.btnThemDVT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThemDVT.UseVisualStyleBackColor = true;
-            this.btnThemDVT.Click += new System.EventHandler(this.btnThemDVT_Click);
             // 
             // cbDVT
             // 
@@ -295,9 +281,9 @@
             // clDonGia
             // 
             this.clDonGia.DataPropertyName = "DonGia";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.clDonGia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.clDonGia.DefaultCellStyle = dataGridViewCellStyle1;
             this.clDonGia.HeaderText = "Đơn Giá";
             this.clDonGia.Name = "clDonGia";
             this.clDonGia.Width = 150;
@@ -361,7 +347,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.DataGridView dgNguyenLieu;
-        private System.Windows.Forms.Button btnThemDVT;
         private System.Windows.Forms.ComboBox cbDVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMaNL;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenNL;

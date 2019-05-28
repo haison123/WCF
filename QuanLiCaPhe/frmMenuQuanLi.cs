@@ -30,7 +30,7 @@ namespace QuanLiCaPhe
         {
             this.Close();
             frmQuanLiNL FromQuanLiNL;
-            FromQuanLiNL = new frmQuanLiNL("");
+            FromQuanLiNL = new frmQuanLiNL();
             FromQuanLiNL.Show();
         }
 

@@ -215,7 +215,6 @@ C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.frmReport_BL.res
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.frmReport_CTBanHang.resources
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.frmReport_DT.resources
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.frmSoDoChinh.resources
-C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.frmThemDVT.resources
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.Properties.Resources.resources
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.csproj.GenerateResource.cache
 C:\Users\Dell\Desktop\GIT\WCF\QuanLiCaPhe\obj\Debug\QuanLiCaPhe.csproj.CoreCompileInputs.cache
