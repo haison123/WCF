@@ -83,12 +83,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\BangLuongService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ChamCongNVService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\NguyenLieuService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\NhanVienService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UserService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -351,8 +366,41 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="Connected Services\BangLuongService\BangLuongService.wsdl" />
+    <None Include="Connected Services\BangLuongService\BangLuongService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BangLuongService\BangLuongService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BangLuongService\BangLuongService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService.wsdl" />
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\NguyenLieuService\NguyenLieuServices.wsdl" />
     <None Include="Connected Services\NhanVienService\NhanVienService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DSBangLuong.xsc">
       <DependentUpon>DSBangLuong.xsd</DependentUpon>
     </None>
@@ -479,8 +527,11 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BangLuongService\" />
+    <WCFMetadataStorage Include="Connected Services\ChamCongNVService\" />
     <WCFMetadataStorage Include="Connected Services\NguyenLieuService\" />
     <WCFMetadataStorage Include="Connected Services\NhanVienService\" />
+    <WCFMetadataStorage Include="Connected Services\UserService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\NhanVienService\configuration91.svcinfo" />
@@ -502,6 +553,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\NguyenLieuService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BangLuongService\BangLuongService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BangLuongService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BangLuongService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BangLuongService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ChamCongNVService\ChamCongNVService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ChamCongNVService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ChamCongNVService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ChamCongNVService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

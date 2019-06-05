@@ -214,7 +214,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmDoiPass";
             this.Text = "Đổi Mật Khẩu";
-            this.Load += new System.EventHandler(this.frmDoiPass_Load);
+//            this.Load += new System.EventHandler(this.frmDoiPass_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

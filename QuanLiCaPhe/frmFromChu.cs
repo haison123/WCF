@@ -35,6 +35,7 @@ namespace QuanLiCaPhe
             else
                 if (us.kiemTraLogin(txtUser.Text, txtPass.Text))
                 {
+                    this.Hide();
                     frmMenu.Show();
                     txtPass.Text = "";
                     txtUser.Text = "";
