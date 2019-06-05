@@ -344,6 +344,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChamCongNV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChamCongNV";
             this.Load += new System.EventHandler(this.frmChamCongNV_Load);
             this.groupBox1.ResumeLayout(false);

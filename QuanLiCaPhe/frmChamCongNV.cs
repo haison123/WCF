@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BUS_QLCP;
-using DTO_QLCP;  
+using DTO_QLCP;
+using QuanLiCaPhe.ChamCongNVService;
+using QuanLiCaPhe.NhanVienService;
+using QuanLiCaPhe.BangLuongService;
+
 
 namespace QuanLiCaPhe
 {
     public partial class frmChamCongNV : Form
     {
-        ChamCongNVBO ccBO = new ChamCongNVBO();
-        NhanVienBO nvBO = new NhanVienBO();
-        BangLuongBO blBO = new BangLuongBO();
+        ChamCongNVServiceClient ccsr = new ChamCongNVServiceClient();
+        //ChamCongNVBO ccBO = new ChamCongNVBO();
+        NhanVienServiceClient nvsr = new NhanVienServiceClient();
+        //NhanVienBO nvBO = new NhanVienBO();
+        BangLuongServiceClient blsr = new BangLuongServiceClient();
+        //BangLuongBO blBO = new BangLuongBO();
         public frmChamCongNV()
         {
             InitializeComponent();
@@ -26,14 +33,14 @@ namespace QuanLiCaPhe
             DataTable tableNV = new DataTable();
             cbCaLam.Items.Add("Ca Sáng");
             cbCaLam.Items.Add("Ca Chiều");
-            tableNV = nvBO.getDSNV();
+            tableNV = nvsr.getDSNV();
             cbMaNV.DataSource = tableNV;
             cbMaNV.DisplayMember = "MaNV";
             cbMaNV.ValueMember = "MaNV";
             cbMaNV.SelectedIndex = 0;
             cbCaLam.SelectedIndex = 0;
             DataTable tableCCNV =new DataTable ();
-            tableCCNV = ccBO.getDSCCNV();
+            tableCCNV = ccsr.getDSCCNV();
             dgChamCongNV.DataSource = tableCCNV;
             binData();
         }
@@ -64,7 +71,7 @@ namespace QuanLiCaPhe
             bl.MaNV = cbMaNV.SelectedValue.ToString();
             bl.TenNV = txtTenNV.Text;
             float mucluong = 0;
-            string chucvu = blBO.layChucVu(cbMaNV.SelectedValue.ToString());
+            string chucvu = blsr.layChucVu(cbMaNV.SelectedValue.ToString());
             if (chucvu == "Quản Lý")
                 mucluong  = 12000;
             if (chucvu == "Phục Vụ"||chucvu=="Giữ Xe")
@@ -89,7 +96,7 @@ namespace QuanLiCaPhe
         public void binData()
         {
             BindingSource bindSourceNV = new BindingSource();
-            bindSourceNV.DataSource = ccBO.getDSCCNV();
+            bindSourceNV.DataSource = ccsr.getDSCCNV();
             clearBind();
             //txtTenNV.DataBindings.Add("Text", bindSourceNV, "TenNV");
             dgChamCongNV.DataSource = bindSourceNV;
@@ -105,7 +112,7 @@ namespace QuanLiCaPhe
 
         private void cbMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtTenNV.Text = ccBO.getTenNV(cbMaNV.SelectedValue.ToString());
+            txtTenNV.Text = ccsr.getTenNV(cbMaNV.SelectedValue.ToString());
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -117,14 +124,14 @@ namespace QuanLiCaPhe
             DateTime ngaylam = Convert.ToDateTime(dtNgay.Value.ToShortDateString());
             string calam = cbCaLam.Text;
             string manv=cbMaNV.SelectedValue.ToString();
-            if (ccBO.kiemtraCCNV(manv,ngaylam,calam))
+            if (ccsr.kiemtraCCNV(manv,ngaylam,calam))
             {
-                if (ccBO.SuaCC(ccnv))
+                if (ccsr.SuaCC(ccnv))
                 {
                     float soGioLamDaCham=0;
                     float.TryParse(txtSoGioLam.Text, out soGioLamDaCham);
                     float tgl=0;
-                    string tggiolam = blBO.layGioLam(bl.MaNV,bl.Thang);
+                    string tggiolam = blsr.layGioLam(bl.MaNV,bl.Thang);
                     float.TryParse(tggiolam, out tgl);
                     string sogiotru = txtGioTru.Text;
                     float giotru=0;
@@ -133,7 +140,7 @@ namespace QuanLiCaPhe
                     float giolam = (tgl + sogiolamdung) - soGioLamDaCham;
                     bl.TongGioLam = giolam;
                     bl.TienLuong = bl.TongGioLam * bl.MucLuong;
-                    blBO.SuaBangLuong(bl);
+                    blsr.SuaBangLuong(bl);
                     MessageBox.Show("Sửa thành công");
                 }
                 else
@@ -141,21 +148,21 @@ namespace QuanLiCaPhe
             }
             else
             {
-                if (ccBO.ThemCC(ccnv))
+                if (ccsr.ThemCC(ccnv))
                 {
-                    if (blBO.kiemTraBangLuong(thang, manv) == false)
-                        blBO.ThemBangLuong(bl);
+                    if (blsr.kiemTraBangLuong(thang, manv) == false)
+                        blsr.ThemBangLuong(bl);
                     float giotru = 0;
                     string sogiotru = txtGioTru.Text;
                     float.TryParse(sogiotru, out giotru);
                     float sogiolamdung = 8 - giotru;
                     float tgl = 0;
-                    string tggiolam = blBO.layGioLam(bl.MaNV, bl.Thang);
+                    string tggiolam = blsr.layGioLam(bl.MaNV, bl.Thang);
                     float.TryParse(tggiolam, out tgl);
                     float giolam = tgl + sogiolamdung;
                     bl.TongGioLam = giolam;
                     bl.TienLuong = bl.TongGioLam * bl.MucLuong;
-                    blBO.SuaBangLuong(bl);
+                    blsr.SuaBangLuong(bl);
                     MessageBox.Show("Thêm thành công");
                 }
                 else
@@ -170,17 +177,17 @@ namespace QuanLiCaPhe
             BangLuong bl = getBangLuong();
             if (MessageBox.Show("Bạn có muốn xóa không?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (ccBO.XoaCC(ccnv))
+                if (ccsr.XoaCC(ccnv))
                 {
                     float soGioLamDaCham = 0;
                     float.TryParse(txtSoGioLam.Text, out soGioLamDaCham);
                     float tgl = 0;
-                    string tggiolam = blBO.layGioLam(bl.MaNV, bl.Thang);
+                    string tggiolam = blsr.layGioLam(bl.MaNV, bl.Thang);
                     float.TryParse(tggiolam, out tgl);
                     float giolam = tgl - soGioLamDaCham;
                     bl.TongGioLam = giolam;
                     bl.TienLuong = bl.TongGioLam * bl.MucLuong;
-                    blBO.SuaBangLuong(bl);
+                    blsr.SuaBangLuong(bl);
                     MessageBox.Show("Xóa thành công");
                 }
                 else

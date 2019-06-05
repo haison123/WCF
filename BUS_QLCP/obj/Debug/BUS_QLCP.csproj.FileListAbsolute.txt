@@ -20,3 +20,12 @@ C:\Users\Dell\Desktop\GIT\WCF\BUS_QLCP\obj\Debug\BUS_QLCP.csproj.CoreCompileInpu
 C:\Users\Dell\Desktop\GIT\WCF\BUS_QLCP\obj\Debug\BUS_QLCP.csproj.CopyComplete
 C:\Users\Dell\Desktop\GIT\WCF\BUS_QLCP\obj\Debug\BUS_QLCP.dll
 C:\Users\Dell\Desktop\GIT\WCF\BUS_QLCP\obj\Debug\BUS_QLCP.pdb
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\BUS_QLCP.dll
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\BUS_QLCP.pdb
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\DAL_QLCP.dll
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\DTO_QLCP.dll
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\DAL_QLCP.pdb
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\bin\Debug\DTO_QLCP.pdb
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\obj\Debug\BUS_QLCP.csprojResolveAssemblyReference.cache
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\obj\Debug\BUS_QLCP.dll
+C:\Users\My computer\Desktop\WCF-master\WCF-master\BUS_QLCP\obj\Debug\BUS_QLCP.pdb

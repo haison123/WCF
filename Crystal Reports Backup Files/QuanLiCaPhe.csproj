@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLiCaPhe</RootNamespace>
     <AssemblyName>QuanLiCaPhe</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -32,6 +32,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,17 +51,20 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -78,34 +83,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BanCoKhach.cs" />
-    <Compile Include="BangLuong.cs" />
-    <Compile Include="BanSDNhieu.cs" />
-    <Compile Include="BussinessLogic\BanCoKhachBO.cs" />
-    <Compile Include="BussinessLogic\BangLuongBO.cs" />
-    <Compile Include="BussinessLogic\BanSDNhieuBO.cs" />
-    <Compile Include="BussinessLogic\ChamCongNVBO.cs" />
-    <Compile Include="BussinessLogic\CTDoanhThuBO.cs" />
-    <Compile Include="BussinessLogic\CTHoaDonBO.cs" />
-    <Compile Include="BussinessLogic\CTNhapBO.cs" />
-    <Compile Include="BussinessLogic\CTOderBO.cs" />
-    <Compile Include="BussinessLogic\CTXuatBO.cs" />
-    <Compile Include="BussinessLogic\DoanhThuBO.cs" />
-    <Compile Include="BussinessLogic\HoaDonBO.cs" />
-    <Compile Include="BussinessLogic\MonBO.cs" />
-    <Compile Include="BussinessLogic\NguyenLieuBO.cs" />
-    <Compile Include="BussinessLogic\NXNguyenLieuBO.cs" />
-    <Compile Include="BussinessLogic\NhanVienBO.cs" />
-    <Compile Include="BussinessLogic\OderBO.cs" />
-    <Compile Include="BussinessLogic\UserBO.cs" />
-    <Compile Include="ChamCongNV.cs" />
-    <Compile Include="CTDoanhThu.cs" />
-    <Compile Include="CTHoaDon.cs" />
-    <Compile Include="CTNhapNL.cs" />
-    <Compile Include="CTOder.cs" />
-    <Compile Include="CTXuatNL.cs" />
-    <Compile Include="DataAccess\DBAccess.cs" />
-    <Compile Include="DoanhThu.cs" />
+    <Compile Include="Connected Services\NguyenLieuService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\NhanVienService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DSBangLuong.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -251,17 +243,6 @@
     <Compile Include="frmSoDoChinh.Designer.cs">
       <DependentUpon>frmSoDoChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThemDVT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemDVT.Designer.cs">
-      <DependentUpon>frmThemDVT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.cs" />
-    <Compile Include="NguyenLieu.cs" />
-    <Compile Include="NhanVien.cs" />
-    <Compile Include="NXNguyenLieu.cs" />
-    <Compile Include="Oder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBaoCao.resx">
@@ -344,10 +325,6 @@
       <DependentUpon>frmSoDoChinh.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemDVT.resx">
-      <DependentUpon>frmThemDVT.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -378,6 +355,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="Connected Services\NguyenLieuService\NguyenLieuServices.wsdl" />
+    <None Include="Connected Services\NhanVienService\NhanVienService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.wsdl" />
+    <None Include="Connected Services\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DSBangLuong.xsc">
       <DependentUpon>DSBangLuong.xsd</DependentUpon>
     </None>
@@ -433,6 +423,7 @@
     <None Include="DSHoaDon.xss">
       <DependentUpon>DSHoaDon.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -472,7 +463,6 @@
       <DependentUpon>Report_HD.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
@@ -489,6 +479,63 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_QLCP\BUS_QLCP.csproj">
+      <Project>{56e93cc6-2f8f-430e-b0de-94e8193ce078}</Project>
+      <Name>BUS_QLCP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_QLCP\DTO_QLCP.csproj">
+      <Project>{d399378c-66a5-4f34-aefa-cd6160722ca1}</Project>
+      <Name>DTO_QLCP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NguyenLieuService\" />
+    <WCFMetadataStorage Include="Connected Services\NhanVienService\" />
+    <WCFMetadataStorage Include="Connected Services\UserService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NhanVienService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NhanVienService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NhanVienService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NguyenLieuService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,13 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using BUS_QLCP;
 using DTO_QLCP;
+using QuanLiCaPhe.UserService;
 
 namespace QuanLiCaPhe
 {
     public partial class frmDoiPass : Form
     {
         UserBO userBO = new UserBO();
-        
+        UserServiceClient usersr = new UserServiceClient();
+
         public frmDoiPass()
         {
             InitializeComponent();
@@ -50,22 +52,16 @@ namespace QuanLiCaPhe
             if (txtMaUser.Text == "" || txtMatKhauCu.Text == "" || txtMatKhauMoi.Text == "" || txtNhapLai.Text == "")
                 MessageBox.Show("Bạn phải nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                if(userBO.kiemTraLogin( txtMaUser .Text,txtMatKhauCu.Text))
+                if(usersr.kiemTraLogin( txtMaUser .Text,txtMatKhauCu.Text))
                     if (txtMatKhauMoi.Text != txtNhapLai.Text)
                         MessageBox.Show("Mật khẩu Nhập Lại không chính xác", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
-                        if (userBO.doiPass(us))
+                        if (usersr.doiPass(us))
                             MessageBox.Show("Đổi mật khẩu thành công!");
                         else
                             MessageBox.Show("Lỗi xảy ra!");
                 else
                     MessageBox.Show("Mã User hoặc Mật Khẩu Cũ không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        private void frmDoiPass_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

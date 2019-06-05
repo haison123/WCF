@@ -21,7 +21,7 @@ namespace DAL_QLCP
 
         public void connectDB()
         {
-            connect = new SqlConnection(@"Data Source=DESKTOP-K9B9VR3\SQLEXPRESS;Initial Catalog=QuanLiCaPhe;Integrated Security=True");
+            connect = new SqlConnection(@"Data Source=.;Initial Catalog=QuanLyCaPhe;Integrated Security=True");
             try
             {
                 connect.Open();
